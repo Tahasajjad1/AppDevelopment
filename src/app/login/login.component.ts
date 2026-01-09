@@ -125,7 +125,7 @@ export class LoginComponent {
 
     // 2. Send to Backend
     this.http
-      .post('http://localhost:8080/api/logs/client', {
+      .post('https://probable-robot-pj4x7xgj6pvx36xw5-8080.app.github.dev/api/logs/client', {
         level: level,
         message: message,
         timestamp: new Date().toISOString(),
@@ -157,7 +157,7 @@ export class LoginComponent {
     );
 
     this.isLoading = true;
-    const loginUrl = 'http://localhost:8080/api/auth/login';
+    const loginUrl = 'https://probable-robot-pj4x7xgj6pvx36xw5-8080.app.github.dev/api/auth/login';
 
     this.http.post(loginUrl, this.credentials).subscribe({
       next: (response: any) => {
