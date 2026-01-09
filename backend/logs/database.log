@@ -6,3 +6,62 @@
         count(*) 
     from
         vx_users u1_0
+2026-01-09 12:31:01 
+    select
+        count(*) 
+    from
+        vx_users u1_0
+2026-01-09 12:31:41 
+    select
+        u1_0.id,
+        u1_0.created_at,
+        u1_0.department,
+        u1_0.email,
+        u1_0.failed_attempts,
+        u1_0.full_name,
+        u1_0.last_login,
+        u1_0.password_hash,
+        u1_0.phone_number,
+        u1_0.role,
+        u1_0.status,
+        u1_0.vrx_id 
+    from
+        vx_users u1_0 
+    where
+        u1_0.vrx_id=?
+2026-01-09 12:32:53 
+    select
+        u1_0.id,
+        u1_0.created_at,
+        u1_0.department,
+        u1_0.email,
+        u1_0.failed_attempts,
+        u1_0.full_name,
+        u1_0.last_login,
+        u1_0.password_hash,
+        u1_0.phone_number,
+        u1_0.role,
+        u1_0.status,
+        u1_0.vrx_id 
+    from
+        vx_users u1_0 
+    where
+        u1_0.vrx_id=?
+2026-01-09 12:33:07 
+    select
+        u1_0.id,
+        u1_0.created_at,
+        u1_0.department,
+        u1_0.email,
+        u1_0.failed_attempts,
+        u1_0.full_name,
+        u1_0.last_login,
+        u1_0.password_hash,
+        u1_0.phone_number,
+        u1_0.role,
+        u1_0.status,
+        u1_0.vrx_id 
+    from
+        vx_users u1_0 
+    where
+        u1_0.vrx_id=?

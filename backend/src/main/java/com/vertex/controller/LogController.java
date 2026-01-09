@@ -8,7 +8,8 @@ import java.util.Map;
 
 @RestController
 @RequestMapping("/api/logs")
-@CrossOrigin(origins = "http://localhost:4200")
+//@CrossOrigin(origins = "http://localhost:4200")
+@CrossOrigin(origins = "*")
 public class LogController {
 
     // Matches the name "AngularLogger" in logback-spring.xml
