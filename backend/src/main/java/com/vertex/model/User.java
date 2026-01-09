@@ -48,6 +48,16 @@ public class User {
     @Column(name = "CREATED_AT")
     private LocalDateTime createdAt;
 
+    // --- OTP & FORCED PASSWORD CHANGE FIELDS (NEW) ---
+    @Column(name = "OTP_REQUIRED")
+    private boolean otpRequired = false; // If true, user MUST change password
+
+    @Column(name = "OTP_CODE")
+    private String otpCode;              // Stores the temporary OTP code
+
+    @Column(name = "OTP_EXPIRY_TIME")
+    private LocalDateTime otpExpiryTime; // When the OTP expires
+
     // --- CONSTRUCTORS ---
     public User() {}
 
@@ -61,10 +71,11 @@ public class User {
         this.status = "ACTIVE";
         this.createdAt = LocalDateTime.now();
         this.failedAttempts = 0;
+        this.otpRequired = false; // Default to false
     }
 
     // --- GETTERS AND SETTERS ---
-    // (Standard Getters/Setters for all new fields)
+    
     public Long getId() { return id; }
     public void setId(Long id) { this.id = id; }
 
@@ -73,6 +84,8 @@ public class User {
 
     public String getPasswordHash() { return passwordHash; }
     public void setPasswordHash(String passwordHash) { this.passwordHash = passwordHash; }
+    // NOTE: In Spring Security, this is usually mapped to getPassword()
+    public String getPassword() { return passwordHash; } 
 
     public String getFullName() { return fullName; }
     public void setFullName(String fullName) { this.fullName = fullName; }
@@ -100,4 +113,15 @@ public class User {
 
     public LocalDateTime getCreatedAt() { return createdAt; }
     public void setCreatedAt(LocalDateTime createdAt) { this.createdAt = createdAt; }
+
+    // --- NEW GETTERS/SETTERS FOR OTP ---
+    
+    public boolean isOtpRequired() { return otpRequired; }
+    public void setOtpRequired(boolean otpRequired) { this.otpRequired = otpRequired; }
+
+    public String getOtpCode() { return otpCode; }
+    public void setOtpCode(String otpCode) { this.otpCode = otpCode; }
+
+    public LocalDateTime getOtpExpiryTime() { return otpExpiryTime; }
+    public void setOtpExpiryTime(LocalDateTime otpExpiryTime) { this.otpExpiryTime = otpExpiryTime; }
 }
