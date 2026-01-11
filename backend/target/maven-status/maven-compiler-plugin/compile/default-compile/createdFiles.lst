@@ -1,8 +1,13 @@
+com/vertex/service/CustomUserDetailsService.class
+com/vertex/dto/ChangePasswordRequest.class
 com/vertex/controller/LogController.class
+com/vertex/controller/AuthController.class
+com/vertex/service/AuthService.class
+com/vertex/security/JwtTokenProvider.class
+com/vertex/dto/LoginResponse.class
 com/vertex/dto/LoginRequest.class
 com/vertex/VertexBackendApplication.class
-com/vertex/controller/AuthController.class
 com/vertex/config/DataInitializer.class
 com/vertex/repository/UserRepository.class
 com/vertex/model/User.class
-com/vertex/service/AuthService.class
+com/vertex/config/SecurityConfig.class

@@ -9,10 +9,13 @@ import java.util.Optional;
 @Repository
 public interface UserRepository extends JpaRepository<User, Long> {
 
-    // This "Magic Method" tells Spring to write the SQL query for you.
-    // It roughly translates to: "SELECT * FROM VX_USERS WHERE VRX_ID = ?"
+    // Used for Login (matches your LoginRequest)
     Optional<User> findByVrxId(String vrxId);
     
-    // Optional: Useful to prevent duplicate emails during registration
+    // Used for Registration checks
     boolean existsByVrxId(String vrxId);
+
+    // --- ADD THIS MISSING METHOD ---
+    // Used by AuthController.changePassword() to find user by email
+    Optional<User> findByEmail(String email);
 }

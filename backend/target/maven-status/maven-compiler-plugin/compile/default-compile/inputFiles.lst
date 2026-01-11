@@ -1,8 +1,13 @@
 /workspaces/AppDevelopment/backend/src/main/java/com/vertex/controller/LogController.java
+/workspaces/AppDevelopment/backend/src/main/java/com/vertex/service/CustomUserDetailsService.java
+/workspaces/AppDevelopment/backend/src/main/java/com/vertex/dto/ChangePasswordRequest.java
+/workspaces/AppDevelopment/backend/src/main/java/com/vertex/model/User.java
 /workspaces/AppDevelopment/backend/src/main/java/com/vertex/controller/AuthController.java
 /workspaces/AppDevelopment/backend/src/main/java/com/vertex/service/AuthService.java
 /workspaces/AppDevelopment/backend/src/main/java/com/vertex/repository/UserRepository.java
+/workspaces/AppDevelopment/backend/src/main/java/com/vertex/dto/LoginResponse.java
+/workspaces/AppDevelopment/backend/src/main/java/com/vertex/security/JwtTokenProvider.java
+/workspaces/AppDevelopment/backend/src/main/java/com/vertex/config/SecurityConfig.java
 /workspaces/AppDevelopment/backend/src/main/java/com/vertex/dto/LoginRequest.java
-/workspaces/AppDevelopment/backend/src/main/java/com/vertex/model/User.java
 /workspaces/AppDevelopment/backend/src/main/java/com/vertex/config/DataInitializer.java
 /workspaces/AppDevelopment/backend/src/main/java/com/vertex/VertexBackendApplication.java
