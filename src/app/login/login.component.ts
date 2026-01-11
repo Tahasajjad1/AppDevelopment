@@ -125,10 +125,11 @@ export class LoginComponent {
 
     // 2. Send to Backend
     this.http
-      .post('https://probable-robot-pj4x7xgj6pvx36xw5-8080.app.github.dev/api/logs/client', {
+      .post('https://literate-happiness-4wpv67q5vxx3jw6p-8080.app.github.dev/api/logs/client', {
         level: level,
         message: message,
         timestamp: new Date().toISOString(),
+        
       })
       .subscribe({
         error: (e) => console.error('Failed to send log to server', e),
@@ -157,7 +158,7 @@ export class LoginComponent {
     );
 
     this.isLoading = true;
-    const loginUrl = 'https://probable-robot-pj4x7xgj6pvx36xw5-8080.app.github.dev/api/auth/login';
+    const loginUrl = 'https://literate-happiness-4wpv67q5vxx3jw6p-8080.app.github.dev/api/auth/login';
 
     this.http.post(loginUrl, this.credentials).subscribe({
       next: (response: any) => {
