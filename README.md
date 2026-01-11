@@ -25,3 +25,5 @@ docker run -d --name oracle-db -p 1521:1521 -e ORACLE_PWD=VertexSecurePass123! c
 docker rm -f oracle-db
 
 docker start oracle-db
+
+2R89SBZjPo

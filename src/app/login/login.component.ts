@@ -117,19 +117,14 @@ export class LoginComponent {
 
   constructor(private http: HttpClient, private router: Router) {}
 
-  // --- NEW: LOGGING SYSTEM ---
-  // Sends logs to Spring Boot (which writes to angular.log)
+  // --- LOGGING SYSTEM ---
   logToBackend(level: string, message: string) {
-    // 1. Keep local console for dev convenience
     console.log(`[${level}] ${message}`);
-
-    // 2. Send to Backend
     this.http
       .post('https://literate-happiness-4wpv67q5vxx3jw6p-8080.app.github.dev/api/logs/client', {
         level: level,
         message: message,
         timestamp: new Date().toISOString(),
-        
       })
       .subscribe({
         error: (e) => console.error('Failed to send log to server', e),
@@ -188,6 +183,25 @@ export class LoginComponent {
         );
 
         this.isLoading = false;
+
+        // --- 🛑 CRITICAL CHANGE: FORCE REDIRECT LOGIC ---
+        // We catch the specific 403 signal here
+        if (error.status === 403 && error.error?.status === 'PASSWORD_CHANGE_REQUIRED') {
+            
+            this.showToast(
+                'error', 
+                'Password Expired', 
+                'You must change your password before logging in.'
+            );
+
+            // Redirect after 2 seconds
+            setTimeout(() => {
+                this.router.navigate(['/change-password']);
+            }, 2000);
+            
+            return; // Stop here! Do not show other error messages.
+        }
+        // ------------------------------------------------
 
         if (error.status === 0) {
           this.showToast(

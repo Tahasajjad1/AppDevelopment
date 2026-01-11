@@ -8,18 +8,25 @@ export const routes: Routes = [
   },
   {
     path: 'login',
-    // CHANGE: Removed 'components/' from the path
     loadComponent: () =>
       import('./login/login.component').then((m) => m.LoginComponent),
   },
   {
     path: 'dashboard',
-    // CHANGE: Removed 'components/' from the path
     loadComponent: () =>
       import('./dashboard/dashboard.component').then(
         (m) => m.DashboardComponent
       ),
   },
+  // --- ADD THIS NEW ROUTE ---
+  {
+    path: 'change-password',
+    loadComponent: () =>
+      import('./change-password/change-password.component').then(
+        (m) => m.ChangePasswordComponent
+      ),
+  },
+  // --------------------------
   {
     path: '**',
     redirectTo: 'login',

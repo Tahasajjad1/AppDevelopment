@@ -93,22 +93,31 @@ public class AuthController {
     @PostMapping("/change-password")
     public ResponseEntity<?> changePassword(@RequestBody ChangePasswordRequest request) {
         
-        User user = userRepository.findByEmail(request.getEmail())
-                .orElseThrow(() -> new RuntimeException("User not found"));
+        // 1. Try to find the user
+        User user = userRepository.findByVrxId(request.getVrxId()).orElse(null);
 
-        if (!passwordEncoder.matches(request.getOldPassword(), user.getPasswordHash())) {
-            return ResponseEntity.badRequest().body("Current password is incorrect.");
+        // --- NEW: SPECIFIC ERROR IF USER ID DOES NOT MATCH ---
+        if (user == null) {
+            return ResponseEntity.status(HttpStatus.NOT_FOUND) // Returns 404 Error
+                .body("User ID does not exist.");
         }
 
+        // 2. Validate: New Password == Confirm Password
+        if (!request.getNewPassword().equals(request.getConfirmPassword())) {
+            return ResponseEntity.badRequest().body("Passwords do not match.");
+        }
+
+        // 3. Validate Password Strength (Min 8 chars)
         if (request.getNewPassword().length() < 8) {
             return ResponseEntity.badRequest().body("New password must be at least 8 characters.");
         }
 
+        // 4. Update Password
         user.setPasswordHash(passwordEncoder.encode(request.getNewPassword()));
-        user.setOtpRequired(false); 
+        user.setOtpRequired(false); // Unlock the account
         
         userRepository.save(user);
 
-        return ResponseEntity.ok("Password changed successfully. Please login again.");
+        return ResponseEntity.ok("Password changed successfully.");
     }
 }
