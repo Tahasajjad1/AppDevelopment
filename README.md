@@ -20,12 +20,8 @@ npx ng serve --host 0.0.0.0
 
 sudo apt-get update && sudo apt-get install -y openjdk-17-jdk
 
-docker run -d \
+docker run -d --name oracle-db -p 1521:1521 -e ORACLE_PWD=VertexSecurePass123! container-registry.oracle.com/database/free:latest
 
---name oracle-db \
+docker rm -f oracle-db
 
--p 1521:1521 \
-
--e ORACLE_PWD=VertexSecurePass123! \
-
-container-registry.oracle.com/database/free:latest
+docker start oracle-db

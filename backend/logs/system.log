@@ -1,0 +1,75 @@
+2026-01-11 10:33:04 [main] INFO  com.vertex.VertexBackendApplication - Starting VertexBackendApplication using Java 17.0.17 with PID 43529 (/workspaces/AppDevelopment/backend/target/classes started by codespace in /workspaces/AppDevelopment/backend)
+2026-01-11 10:33:04 [main] INFO  com.vertex.VertexBackendApplication - No active profile set, falling back to 1 default profile: "default"
+2026-01-11 10:33:05 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-01-11 10:33:05 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 39 ms. Found 1 JPA repository interface.
+2026-01-11 10:33:06 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8080 (http)
+2026-01-11 10:33:06 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2026-01-11 10:33:06 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2026-01-11 10:33:06 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.18]
+2026-01-11 10:33:06 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2026-01-11 10:33:06 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1963 ms
+2026-01-11 10:33:07 [main] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2026-01-11 10:33:07 [main] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.4.1.Final
+2026-01-11 10:33:07 [main] INFO  o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+2026-01-11 10:33:07 [main] INFO  o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-01-11 10:33:07 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2026-01-11 10:33:08 [main] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection oracle.jdbc.driver.T4CConnection@8432469
+2026-01-11 10:33:08 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2026-01-11 10:33:08 [main] WARN  org.hibernate.orm.deprecation - HHH90000025: OracleDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2026-01-11 10:33:09 [main] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-01-11 10:33:10 [main] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-01-11 10:33:10 [main] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-01-11 10:33:10 [main] INFO  o.s.s.web.DefaultSecurityFilterChain - Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@37289e90, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@f461c9c, org.springframework.security.web.context.SecurityContextHolderFilter@495598c5, org.springframework.security.web.header.HeaderWriterFilter@7ceb7a60, org.springframework.web.filter.CorsFilter@40477d52, org.springframework.security.web.authentication.logout.LogoutFilter@22f1a340, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@48dc06a9, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@1798c749, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@2a1be9f8, org.springframework.security.web.access.ExceptionTranslationFilter@63024843, org.springframework.security.web.access.intercept.AuthorizationFilter@18baee88]
+2026-01-11 10:33:11 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2026-01-11 10:33:11 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port 8080 (http) with context path ''
+2026-01-11 10:33:11 [main] INFO  com.vertex.VertexBackendApplication - Started VertexBackendApplication in 7.78 seconds (process running for 8.293)
+2026-01-11 10:33:11 [main] INFO  com.vertex.config.DataInitializer - Starting Database Initialization...
+2026-01-11 10:33:11 [main] INFO  com.vertex.config.DataInitializer - Database is empty. Seeding Default Admin...
+2026-01-11 10:33:11 [main] INFO  com.vertex.config.DataInitializer - ADMIN Created Successfully.
+2026-01-11 10:33:11 [main] INFO  com.vertex.config.DataInitializer - ----------------------------------------------------------
+2026-01-11 10:33:11 [main] INFO  com.vertex.config.DataInitializer - TEMPORARY LOGIN CREDENTIALS:
+2026-01-11 10:33:11 [main] INFO  com.vertex.config.DataInitializer - User: VRX-ADMIN
+2026-01-11 10:33:11 [main] INFO  com.vertex.config.DataInitializer - Pass: 2R89SBZjPo
+2026-01-11 10:33:11 [main] INFO  com.vertex.config.DataInitializer - NOTE: User must change password after first login.
+2026-01-11 10:33:11 [main] INFO  com.vertex.config.DataInitializer - ----------------------------------------------------------
+2026-01-11 10:33:11 [main] INFO  com.vertex.VertexBackendApplication - =========================================================
+2026-01-11 10:33:11 [main] INFO  com.vertex.VertexBackendApplication - Vertex Spectrum Backend is RUNNING and Ready!
+2026-01-11 10:33:11 [main] INFO  com.vertex.VertexBackendApplication - =========================================================
+2026-01-11 10:34:38 [http-nio-8080-exec-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-01-11 10:34:38 [http-nio-8080-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2026-01-11 10:34:38 [http-nio-8080-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 1 ms
+2026-01-11 10:42:35 [SpringApplicationShutdownHook] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2026-01-11 10:42:35 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2026-01-11 10:42:35 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2026-01-11 10:45:26 [main] INFO  com.vertex.VertexBackendApplication - Starting VertexBackendApplication using Java 17.0.17 with PID 50088 (/workspaces/AppDevelopment/backend/target/classes started by codespace in /workspaces/AppDevelopment/backend)
+2026-01-11 10:45:26 [main] INFO  com.vertex.VertexBackendApplication - No active profile set, falling back to 1 default profile: "default"
+2026-01-11 10:45:27 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-01-11 10:45:27 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 47 ms. Found 1 JPA repository interface.
+2026-01-11 10:45:27 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8080 (http)
+2026-01-11 10:45:27 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2026-01-11 10:45:27 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2026-01-11 10:45:27 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.18]
+2026-01-11 10:45:27 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2026-01-11 10:45:27 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1399 ms
+2026-01-11 10:45:28 [main] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2026-01-11 10:45:28 [main] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.4.1.Final
+2026-01-11 10:45:28 [main] INFO  o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+2026-01-11 10:45:28 [main] INFO  o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-01-11 10:45:28 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2026-01-11 10:45:28 [main] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection oracle.jdbc.driver.T4CConnection@6dded900
+2026-01-11 10:45:28 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2026-01-11 10:45:28 [main] WARN  org.hibernate.orm.deprecation - HHH90000025: OracleDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2026-01-11 10:45:29 [main] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-01-11 10:45:30 [main] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-01-11 10:45:30 [main] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-01-11 10:45:31 [main] INFO  o.s.s.web.DefaultSecurityFilterChain - Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@6137dc84, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@22f1a340, org.springframework.security.web.context.SecurityContextHolderFilter@4b718c45, org.springframework.security.web.header.HeaderWriterFilter@66011fbc, org.springframework.web.filter.CorsFilter@32f243f, org.springframework.security.web.authentication.logout.LogoutFilter@79d3fb99, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@2c1b10f2, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@f5314bc, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@7aa5292d, org.springframework.security.web.access.ExceptionTranslationFilter@d91e8c7, org.springframework.security.web.access.intercept.AuthorizationFilter@4d5d945d]
+2026-01-11 10:45:31 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2026-01-11 10:45:31 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port 8080 (http) with context path ''
+2026-01-11 10:45:31 [main] INFO  com.vertex.VertexBackendApplication - Started VertexBackendApplication in 5.677 seconds (process running for 5.989)
+2026-01-11 10:45:31 [main] INFO  com.vertex.config.DataInitializer - Database already initialized. Skipping seeder.
+2026-01-11 10:45:31 [main] INFO  com.vertex.VertexBackendApplication - =========================================================
+2026-01-11 10:45:31 [main] INFO  com.vertex.VertexBackendApplication - Vertex Spectrum Backend is RUNNING and Ready!
+2026-01-11 10:45:31 [main] INFO  com.vertex.VertexBackendApplication - =========================================================
+2026-01-11 10:46:15 [http-nio-8080-exec-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-01-11 10:46:15 [http-nio-8080-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2026-01-11 10:46:15 [http-nio-8080-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 1 ms

@@ -37,19 +37,26 @@ public class AuthController {
     @PostMapping("/login")
     public ResponseEntity<?> login(@RequestBody LoginRequest loginRequest) {
         try {
-            // A. Authenticate using VRX-ID (Not Username)
+            // A. Authenticate
             Authentication authentication = authenticationManager.authenticate(
                 new UsernamePasswordAuthenticationToken(
-                    loginRequest.getVrxId(),   // <--- CHANGED THIS from getUsername()
+                    loginRequest.getVrxId(),   
                     loginRequest.getPassword()
                 )
             );
 
-            // B. Retrieve User by VRX-ID to check status
-            User user = userRepository.findByVrxId(loginRequest.getVrxId()) // <--- CHANGED THIS from findByEmail/getUsername
+            // B. Retrieve User
+            User user = userRepository.findByVrxId(loginRequest.getVrxId())
                     .orElseThrow(() -> new RuntimeException("User not found"));
 
-            // C. CHECK IF PASSWORD CHANGE IS REQUIRED
+            // --- [FIXED NAME] Reset failed attempts if > 0 ---
+            // We use 'getFailedAttempts()' because that is what is in your User.java
+            if (user.getFailedAttempts() > 0) {
+                user.setFailedAttempts(0);
+                userRepository.save(user);
+            }
+
+            // C. Check Password Change Requirement
             if (user.isOtpRequired()) {
                 return ResponseEntity.status(HttpStatus.FORBIDDEN)
                     .body(new LoginResponse(
@@ -63,6 +70,21 @@ public class AuthController {
             return ResponseEntity.ok(new LoginResponse("SUCCESS", jwt));
 
         } catch (AuthenticationException e) {
+            // --- [FIXED NAME] Increment failed attempts manually ---
+            
+            User failedUser = userRepository.findByVrxId(loginRequest.getVrxId()).orElse(null);
+            
+            if (failedUser != null) {
+                // Use 'getFailedAttempts()' matching your User.java
+                int currentFails = failedUser.getFailedAttempts();
+                int newFails = currentFails + 1;
+                
+                failedUser.setFailedAttempts(newFails);
+                userRepository.save(failedUser); 
+                
+                System.out.println("Login Failed for " + failedUser.getVrxId() + ". New Attempt Count: " + newFails);
+            }
+            
             return ResponseEntity.status(HttpStatus.UNAUTHORIZED).body("Invalid credentials");
         }
     }
@@ -71,7 +93,6 @@ public class AuthController {
     @PostMapping("/change-password")
     public ResponseEntity<?> changePassword(@RequestBody ChangePasswordRequest request) {
         
-        // Find by Email is correct here because ChangePasswordRequest uses email
         User user = userRepository.findByEmail(request.getEmail())
                 .orElseThrow(() -> new RuntimeException("User not found"));
 
